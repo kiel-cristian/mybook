@@ -12,7 +12,6 @@ group :assets do
   #NEED TO CHECK IF THERE ARE IN THE CORRECT GROUP
   gem 'twitter-bootstrap-rails'
   gem "less-rails-bootstrap"
-  gem "less-rails-bootstrap-devise"
   gem 'bootstrap-datepicker-rails'
   ###########################
 end
