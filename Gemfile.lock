@@ -63,7 +63,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
-    commonjs (0.2.6)
     database_cleaner (0.9.1)
     devise (2.2.2)
       bcrypt-ruby (~> 3.0)
@@ -98,13 +97,6 @@ GEM
     kgio (2.8.0)
     launchy (2.1.2)
       addressable (~> 2.3)
-    less (2.2.2)
-      commonjs (~> 0.2.6)
-    less-rails (2.2.6)
-      actionpack (>= 3.1)
-      less (~> 2.2.0)
-    less-rails-bootstrap (2.2.1)
-      less-rails (~> 2.2.0)
     letter_opener (1.0.0)
       launchy (>= 2.0.4)
     mail (2.4.4)
@@ -240,7 +232,6 @@ DEPENDENCIES
   haml-rails
   jquery-datatables-rails
   jquery-rails
-  less-rails-bootstrap
   letter_opener
   paperclip
   pg
