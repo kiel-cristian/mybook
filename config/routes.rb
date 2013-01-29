@@ -1,4 +1,16 @@
 Mybook::Application.routes.draw do
+  get "books/index"
+
+  get "books/show"
+
+  get "books/new"
+
+  get "books/create"
+
+  get "books/edit"
+
+  get "books/delete"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +60,7 @@ Mybook::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'books#index'
 
   # See how all your routes lay out with "rake routes"
 
