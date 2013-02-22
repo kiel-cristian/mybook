@@ -1,14 +1,10 @@
 Mybook::Application.routes.draw do
 
-  get "carts/new"
-
-  get "carts/create"
-
-  get "carts/add"
-
-  get "carts/remove"
-
-  resources :books
+  resources :carts, only: [ :new, :create ] do
+   member do
+    resources :items
+   end
+  end
 
   root :to => 'books#index'
 end
