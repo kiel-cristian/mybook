@@ -3,23 +3,32 @@ class Cart < ActiveRecord::Base
   attr_accessible :owner_id, :owner_type
 
   # associations
-  belongs_to :owner
-  has_many :items, as: :itemable, dependent: :destroy
+  belongs_to :owner, polymorphic: true
+
+  has_many :items, dependent: :destroy
 
   def checkout
     can_checkout = true
-    self.items.map { |item| item.checkout(can_checkout) }
-
+    if self.items.presence
+      self.items.map { |item| item.checkout(can_checkout) }
+    else
+      can_checkout = false
+    end
     can_checkout
   end
 
   def order_id
-    SecureRandom.hex(10)
+    SecureRandom.hex(10).to_s
   end
 
   def add_item item
-    self.items.new(item.attributes)
-    self.save
+    if item.respond_to :itemized? and item.itemized?
+      new_item = self.items.new(itemable_id: item.id, itemable_type: item.class.name )
+      new_item.save
+      self.save
+    else
+      false
+    end
   end
 
   def remove_item item

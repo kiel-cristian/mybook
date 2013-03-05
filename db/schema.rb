@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(:version => 20130304152434) do
   end
 
   create_table "items", :force => true do |t|
-    t.integer  "itemable_id"
-    t.string   "itemable_type"
-    t.text     "token"
+    t.integer  "itemable_id",   :null => false
+    t.string   "itemable_type", :null => false
+    t.text     "token",         :null => false
+    t.integer  "cart_id",       :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
