@@ -2,30 +2,37 @@ require 'spec_helper'
 
 describe CartsController do
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
+  describe "POST 'add_item'" do
+    xit "returns http success" do
+      post 'add_item'
       response.should be_success
     end
   end
 
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
+  describe "POST 'remove_item'" do
+    xit "returns http success" do
+      delete 'remove_item'
       response.should be_success
     end
   end
 
-  describe "GET 'add'" do
-    it "returns http success" do
-      get 'add'
+  describe "POST 'checkout'" do
+    xit "returns http success" do
+      post 'checkout'
       response.should be_success
     end
   end
 
-  describe "GET 'remove'" do
-    it "returns http success" do
-      get 'remove'
+  describe "POST 'pay'" do
+    xit "returns http success" do
+      post 'pay'
+      response.should be_success
+    end
+  end
+
+  describe "POST 'confirm_data'" do
+    xit "returns http success" do
+      post 'confirm_data'
       response.should be_success
     end
   end
