@@ -27,7 +27,7 @@ class Cart < ActiveRecord::Base
       new_item.save
       self.save
     else
-      false
+      raise ArgumentError, " Item needs to be itemized in order to be added to cart"
     end
   end
 
