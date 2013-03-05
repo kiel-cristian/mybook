@@ -1,13 +1,19 @@
 class CartsController < ApplicationController
-  def new
+  before_filter :load_cart
+
+  def checkout
   end
 
-  def create
+  def confirm_data
   end
 
-  def add
+  def pay
   end
 
-  def remove
+  def add_item
   end
+
+  def remove_item
+  end
+
 end
