@@ -5,7 +5,7 @@ module SimpleCart
       base.extend ClassMethods
     end
 
-    module ClassMethods
+    class ClassMethods
       def load_cart
         if cookies[:cart_id].presence
           @cart = Cart.find_by_id(cookies[:cart_id])
