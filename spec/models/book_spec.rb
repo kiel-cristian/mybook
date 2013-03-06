@@ -15,9 +15,6 @@ describe Book do
   it "should respond to :pricing" do
    should respond_to :pricing
   end
-  it "should respond to :item" do
-   should respond_to :item
-  end
 
   # associations
   it "should have one item" do

@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  before_filter :load_cart
 
   def checkout
   end
