@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
-
   def index
+    load_cart
+
   end
 
   def show

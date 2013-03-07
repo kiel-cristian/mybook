@@ -30,4 +30,4 @@ end
 ActiveRecord::Base.send :extend, SimpleCart
 
 # Extend ActionController's functionality
-ActionController::Base.send :extend, SimpleCart::Controller
+ActionController::Base.send :include, SimpleCart::Controller
