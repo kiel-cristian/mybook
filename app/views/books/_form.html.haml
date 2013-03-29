@@ -1,0 +1,8 @@
+.well
+  = simple_form_for @item, html: { class: 'form'} do |f|
+    = f.input :tittle
+    = f.input :author
+    = f.input :date
+    .form-actions
+      = f.submit
+      = link_to "Cancel", books_path

@@ -1,6 +1,6 @@
 class Cart < ActiveRecord::Base
   # attributes
-  attr_accessible :owner_id, :owner_type
+  attr_accessible :owner_id, :owner_type, :order_id
 
   # associations
   belongs_to :owner, polymorphic: true
@@ -17,15 +17,19 @@ class Cart < ActiveRecord::Base
     can_checkout
   end
 
-  def order_id
-    SecureRandom.hex(10).to_s
+  def new_order_id
+    self.order_id = SecureRandom.hex(20).to_s
+  end
+
+  def new_item_token
+    DateTime.now.to_s + SecureRandom.hex(5).to_s
   end
 
   def add_item item
-    if item.respond_to :itemized? and item.itemized?
+    if item.respond_to? :itemized? and item.itemized?
       new_item = self.items.new(itemable_id: item.id, itemable_type: item.class.name )
+      new_item.token = self.new_item_token
       new_item.save
-      self.save
     else
       raise ArgumentError, " Item needs to be itemized in order to be added to cart"
     end

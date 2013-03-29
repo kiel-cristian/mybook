@@ -9,5 +9,5 @@ class Item < ActiveRecord::Base
 
   # validations
   validates_presence_of :cart_id, :itemable_id, :itemable_type, :token
-  validates_uniqueness_of :cart_id, scope: [:itemable_id]
+  validates_uniqueness_of :cart_id, scope: [:itemable_id, :itemable_type]
 end

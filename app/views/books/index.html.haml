@@ -1,2 +1,18 @@
-%h1 Books#index
-%p Find me in app/views/books/index.html.haml
+%h1 Books
+
+%table.table.table-bordered
+  %thead
+    %th Title
+    %th Author
+    %th Date
+    %th Actions
+  %tbody
+    - @items.each do |item|
+      %tr
+        %td= link_to item.tittle, book_path(item), class: 'btn btn-link'
+        %td= item.author
+        %td= item.date
+        %td= make_cart_link item
+
+.form-actions
+  = link_to "New Book", new_book_path, class: 'btn'

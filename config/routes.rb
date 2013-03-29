@@ -1,8 +1,10 @@
 Mybook::Application.routes.draw do
 
+  resources :books
+
   resources :carts, only: [ :checkout, :confirm_data, :pay ] do
    member do
-    post 'add_item'
+    get 'add_item'
     delete 'remove_item'
     post 'checkout'
     post 'confirm_data'
