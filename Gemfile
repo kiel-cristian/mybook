@@ -1,38 +1,51 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
+gem 'rails', '3.2.11'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails'
+  gem 'uglifier'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  #NEED TO CHECK IF THERE ARE IN THE CORRECT GROUP
+  gem "therubyracer"
+  gem "less-rails"
+  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-datepicker-rails'
+  ###########################
 end
 
+group :test do
+  # Pretty printed test output
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda'
+  gem 'capybara'
+  gem 'capybara-webkit'
+end
+
+group :test,:development do
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'route66'
+  gem 'letter_opener'
+  gem 'spork'
+end
+
+gem 'pg'
+gem 'simple_form'
+gem 'haml-rails'
+gem 'cocoon'
+gem 'paperclip'
+gem 'devise'
 gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'jquery-datatables-rails'
+gem 'cancan'
+gem 'will_paginate'
+gem 'squeel'
+gem 'unicorn'

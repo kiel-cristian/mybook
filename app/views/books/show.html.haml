@@ -1,0 +1,17 @@
+- model_class = Book
+%h1= @item.tittle
+%table.table.table-bordered.table-striped
+  %thead
+    %th
+    %th
+  %tbody
+    %tr
+      %td Author
+      %td= @item.author
+    %tr
+      %td date
+      %td= @item.date
+
+.form-actions
+  = make_cart_link @item
+  = link_to "Books", books_path
