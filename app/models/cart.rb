@@ -29,6 +29,8 @@ class Cart < ActiveRecord::Base
     if item.respond_to? :itemized? and item.itemized?
       new_item = self.items.new(itemable_id: item.id, itemable_type: item.class.name )
       new_item.token = self.new_item_token
+      id = Item.all.count
+      new_item.id = id + 1
       new_item.save
     else
       raise ArgumentError, " Item needs to be itemized in order to be added to cart"

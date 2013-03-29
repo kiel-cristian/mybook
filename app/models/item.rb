@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
 
   # attributes
-  attr_accessible :token, :itemable_type, :itemable_id, :cart_id
+  attr_accessible :token, :itemable_type, :itemable_id, :cart_id, :id
 
   # associations
   belongs_to :cart
