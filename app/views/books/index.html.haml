@@ -12,7 +12,9 @@
         %td= link_to item.tittle, book_path(item), class: 'btn btn-link'
         %td= item.author
         %td= item.date
-        %td= make_cart_link item
+        %td
+          = make_cart_link item
+          = link_to "Remove Book", book_path(item), class: 'btn btn-mini btn-danger', method: :delete
 
 .form-actions
   = link_to "New Book", new_book_path, class: 'btn'
