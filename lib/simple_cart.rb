@@ -17,7 +17,7 @@ module SimpleCart
       include SimpleCart::Model
 
       # Polymorphic association
-      has_one :item, as: simple_cart_configuration[:polymorphic_name]
+      has_many :items, as: simple_cart_configuration[:polymorphic_name]
     end
   end
 

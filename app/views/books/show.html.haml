@@ -1,5 +1,5 @@
 - model_class = Book
-%h1= @item.tittle
+%h1= @item.tittle.capitalize
 %table.table.table-bordered.table-striped
   %thead
     %th
@@ -9,7 +9,7 @@
       %td Author
       %td= @item.author
     %tr
-      %td date
+      %td Date
       %td= @item.date
 
 .form-actions
